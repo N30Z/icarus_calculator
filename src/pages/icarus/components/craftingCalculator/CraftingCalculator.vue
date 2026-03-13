@@ -105,8 +105,8 @@
                         <n-image
                             class="icon"
                             width="32"
-                            :src="`${gameAssetsUrl}/ItemIcons/${recipeData[componentName]?.iconPath}.png`"
-                            :fallback-src="`${gameAssetsUrl}/Images/question-mark.png`"
+                            :src="`${iconAssetsUrl}/ItemIcons/${recipeData[componentName]?.iconPath}.png`"
+                            :fallback-src="`${iconAssetsUrl}/Images/question-mark.png`"
                             :preview-disabled="true"
                         />
                         <div class="label">{{ recipeData[componentName]?.label ?? itemLabelMap[componentName] ?? componentName }}</div>
@@ -130,7 +130,7 @@ import { SortAlphaDown } from '@vicons/fa';
 import CraftingTreeNode from './CraftingTreeNode.vue';
 import { useIcarusStore } from '@/store/icarus';
 import { itemLabelMap } from '@/utility/icarusData';
-import { GAME_ASSETS_URL } from '@/constants/common';
+import { GAME_ASSETS_URL, ICON_ASSETS_URL } from '@/constants/common';
 
 // Layout constants (px) — used for initial placement and line endpoints
 const CARD_W = 130;
@@ -150,6 +150,7 @@ export default {
         return {
             itemLabelMap,
             gameAssetsUrl: GAME_ASSETS_URL,
+            iconAssetsUrl: ICON_ASSETS_URL,
             requiredCraftingStations: [],
             nodePositions: {},
             checkedNodes: {},
