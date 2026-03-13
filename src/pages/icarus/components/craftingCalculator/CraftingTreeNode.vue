@@ -3,8 +3,8 @@
         <div class="node-icon-wrap">
             <n-image
                 :width="isRoot ? 52 : 44"
-                :src="`${gameAssetsUrl}/ItemIcons/${recipe?.iconPath}.png`"
-                :fallback-src="`${gameAssetsUrl}/Images/question-mark.png`"
+                :src="`${iconAssetsUrl}/ItemIcons/${recipe?.iconPath}.png`"
+                :fallback-src="`${iconAssetsUrl}/Images/question-mark.png`"
                 :preview-disabled="true"
                 object-fit="contain"
             />
@@ -58,7 +58,7 @@ import { mapState } from 'pinia';
 import { Times } from '@vicons/fa';
 import { useIcarusStore } from '@/store/icarus';
 import { itemLabelMap } from '@/utility/icarusData';
-import { GAME_ASSETS_URL } from '@/constants/common';
+import { GAME_ASSETS_URL, ICON_ASSETS_URL } from '@/constants/common';
 
 export default {
     name: 'CraftingTreeNode',
@@ -77,6 +77,7 @@ export default {
         return {
             itemLabelMap,
             gameAssetsUrl: GAME_ASSETS_URL,
+            iconAssetsUrl: ICON_ASSETS_URL,
         };
     },
     computed: {

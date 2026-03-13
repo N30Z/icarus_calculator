@@ -6,7 +6,7 @@
                     <n-image
                         class="icon"
                         width="24"
-                        :src="`${gameAssetsUrl}/ItemIcons/Tools/ITEM_Building_RepairTool.png`"
+                        :src="`${iconAssetsUrl}/ItemIcons/Tools/ITEM_Building_RepairTool.png`"
                         :preview-disabled="true"
                     />
                     <span class="px-2">Icarus Crafting Calculator</span>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { GAME_ASSETS_URL } from '@/constants/common';
+import { GAME_ASSETS_URL, ICON_ASSETS_URL } from '@/constants/common';
 
 export default {
     name: 'Header',
@@ -26,6 +26,7 @@ export default {
     data() {
         return {
             gameAssetsUrl: GAME_ASSETS_URL,
+            iconAssetsUrl: ICON_ASSETS_URL,
         };
     },
     computed: {
