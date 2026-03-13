@@ -233,6 +233,7 @@ export function processRecipeData(rows = [], { itemTemplateData = {}, itemStatic
             sources: [],
             preferredSource: null,
             outputQuantity: 1,
+            outputItemId: id,
         };
 
         // build list of input item objects
@@ -251,10 +252,11 @@ export function processRecipeData(rows = [], { itemTemplateData = {}, itemStatic
         // TODO: set preferred source from localStorage
         recipeData[id].preferredSource = recipeData[id].sources[0];
 
-        // determine output quantity
+        // determine output quantity and actual output item ID
         (recipe.Outputs || []).forEach((output) => {
             if (id === output.Element.RowName || id.includes(output.Element.RowName)) {
                 recipeData[id].outputQuantity = output.Count;
+                recipeData[id].outputItemId = output.Element.RowName;
             }
         });
     });

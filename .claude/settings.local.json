@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node_modules/.bin/vite build:*)",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\buttl\\\\Projects\\\\icarus_calculator && yarn build 2>&1\")",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\buttl\\\\Projects\\\\icarus_calculator && yarn build\")",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\buttl\\\\Projects\\\\icarus_calculator && yarn build 2>&1 && echo BUILD_OK || echo BUILD_FAILED\")",
+      "Bash(powershell.exe -Command \"where.exe yarn 2>&1; where.exe node 2>&1; where.exe npx 2>&1\")",
+      "Bash(python3:*)"
+    ]
+  }
+}

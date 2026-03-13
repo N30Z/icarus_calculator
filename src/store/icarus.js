@@ -49,6 +49,7 @@ export const useIcarusStore = defineStore('icarus', {
         itemTableData: {},
 
         recipeData: {},
+        recipeByOutput: {},
         recipeOptions: [],
         isLoadingRecipes: false,
 
@@ -219,6 +220,16 @@ export const useIcarusStore = defineStore('icarus', {
 
             const recipeData = processRecipeData(recipes?.Rows, { itemTemplateData, itemStaticData, itemTableData });
             this.recipeData = recipeData;
+
+            // Build recipeByOutput: maps output item ID -> array of recipe entries (for multi-recipe items)
+            const recipeByOutput = {};
+            Object.values(recipeData).forEach((r) => {
+                const outputId = r.outputItemId ?? r.id;
+                if (!recipeByOutput[outputId]) recipeByOutput[outputId] = [];
+                recipeByOutput[outputId].push(r);
+            });
+            this.recipeByOutput = recipeByOutput;
+
             this.recipeOptions = Object.values(recipeData);
             this.isLoadingRecipes = false;
 

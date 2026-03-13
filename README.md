@@ -3,6 +3,15 @@
 # Icarus Calculator
 This is a web-based calculator tool for the survival game [Icarus](https://store.steampowered.com/app/1149460/ICARUS/). It is designed to be used as a companion tool while playing the game. It is written in [Vue.js](https://vuejs.org/) and deployed using [GitHub Pages](https://pages.github.com/).
 
+## Features
+- **Crafting tree**: Add items to a planning list and see up to 5 levels of component requirements as an interactive node graph.
+- **Component merging**: Shared components across multiple items are displayed once with combined quantities.
+- **Multi-level deduplication**: Items needed at multiple depths are placed at their deepest level, with connector lines drawn across levels accordingly.
+- **Interactive canvas**: Zoom (scroll wheel), pan (drag background), drag individual nodes, click a node to mark it as collected (green = done, yellow = partially done across multiple parent items).
+- **Multiple recipe support**: Items with more than one crafting recipe (e.g. Composite Paste) show a dropdown to select which recipe to use.
+- **Multiple planning tabs**: Maintain separate item lists for different projects.
+- **Crafting station summary**: Lists all required crafting stations for the current item list.
+
 ## Running Project
 If this is your first time see [Setting up Dev Environment](#setting-up-dev-environment)
 
