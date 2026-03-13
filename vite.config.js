@@ -8,6 +8,7 @@ const projectRootDir = resolve(__dirname);
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: '/icarus_calculator/',
     plugins: [vue(), alias()],
     resolve: {
         alias: {
